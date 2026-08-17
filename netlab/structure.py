@@ -3,7 +3,9 @@
 从原 main.py 提取，作为生成器 STRUCTURE 的唯一真源。
 """
 
-STRUCTURE = {
+from typing import Any
+
+STRUCTURE: dict[str, dict[str, dict[str, dict[str, Any]]]] = {
     "第Ⅰ部分 网络的实证研究": {
         "第2章 技术网络": {
             "2.1 Internet": {},

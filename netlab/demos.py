@@ -19,6 +19,8 @@ def _load(rel: str):
     root = Path(__file__).resolve().parent.parent
     full = (root / rel).resolve()
     spec = importlib.util.spec_from_file_location(full.stem, full)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"无法加载模块: {full}")
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod

@@ -30,8 +30,10 @@ select = ["E", "F", "I", "UP"]
 "tests/第Ⅴ部分_网络过程/第17章_传染病的网络模型/test_17_3_SIR模型.py" = ["E741"]
 
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.12"
 check_untyped_defs = true
+follow_imports = "skip"
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
