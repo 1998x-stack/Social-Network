@@ -1,5 +1,32 @@
 # 网络的实证研究（《Networks》配套）
 
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CI](https://github.com/1998x-stack/Social-Network/actions/workflows/ci.yml/badge.svg)](https://github.com/1998x-stack/Social-Network/actions/workflows/ci.yml)
+
+> A runnable companion to Easley & Kleinberg's *Networks* — a shared `netlab` core library
+> (logging, plotting, graph tools, generators, demo entrypoint) plus chapter-wise demos across 5 parts.
+> ——《Networks》配套可运行实现:共享 `netlab` 核心库 + 五个部分的逐章 demo。
+
+## ✅ Quality Bar
+
+- `netlab` 为可安装包(pyproject), `pip install -e .[dev]` 即可。
+- 冒烟测试 144 项全绿(确定性快速); CI 覆盖 ruff + pytest + main.py + README 链接校验。
+- 仅依赖 `numpy / scipy / networkx / matplotlib`。
+
+## 🔬 Verified Demo Evidence
+
+> 短时冒烟运行 —— 证明端到端可执行 (not a tuned result).
+
+```text
+$ MPLBACKEND=Agg python -m netlab.demos 7.3
+[7.3|INFO ] katz alpha=0.2 values=[0.1908, 0.2214, 0.2214, 0.1832, 0.1832]
+[7.3|INFO ] figure saved=outputs/7.3/katz_300dpi.png
+
+$ python -m pytest --no-cov
+144 passed in 0.42s
+```
+
 ## 快速开始
 
 ```bash
