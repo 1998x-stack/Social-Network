@@ -12,5 +12,5 @@
 - Security & regression review: No production, workflow, permission or dependency changes. Existing explicit generator functionality preserved. CLI main() still callable without arguments.
 - Risk & rollback: Users relying on implicit README replacement now need --overwrite-readme; this is intentional to prevent data loss. Revert this PR to restore the old behavior.
 - Follow-up: Audit placeholder tests that assert True, prioritizing runnable chapter demos.
-- Commit: pending
-- PR: pending
+- Commit: 77d281f9f35e2c572186ffb609bcd811f5107e01 (initial implementation)
+- PR: https://github.com/1998x-stack/Social-Network/pull/1
