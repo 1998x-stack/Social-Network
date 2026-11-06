@@ -4,6 +4,7 @@
 """
 from __future__ import annotations
 
+import argparse
 from pathlib import Path
 
 from .structure import STRUCTURE
@@ -90,8 +91,16 @@ def gen_readme() -> None:
     )
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Generate missing docs and test skeletons.")
+    parser.add_argument(
+        "--overwrite-readme", action="store_true",
+        help="explicitly replace the curated README with the generated index",
+    )
+    args = parser.parse_args(argv)
     nd = gen_doc_skeletons()
     nt = gen_test_skeletons()
-    gen_readme()
-    print(f"生成完成：文档骨架 {nd}，测试骨架 {nt}，已重写 README。")
+    if args.overwrite_readme:
+        gen_readme()
+    status = "README 已按显式请求重写。" if args.overwrite_readme else "README 保持不变。"
+    print(f"生成完成：文档骨架 {nd}，测试骨架 {nt}；{status}")
